@@ -1,0 +1,2 @@
+- src: git@github.com:marccolburn/ovirt_create_vms.git
+- src: git@github.com:marccolburn/ovirt_create_networks.git
