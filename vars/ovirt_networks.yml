@@ -57,8 +57,8 @@ vnic_profiles:
   - name: promisc
     network: "{{ network_names[4] }}"
     datacenter: "Default"
-    network_filter: ''
+    network_filter: 'No Network Filter'
   - name: promisc
     network: "{{ network_names[5] }}"
     datacenter: "Default"
-    network_filter: ''
+    network_filter: 'No Network Filter'
