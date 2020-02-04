@@ -2,7 +2,8 @@
 cluster: ibm3650
 virtual_machines:
   - name: nalabcsr1
-    template: csr1000vtemplatebaseconfig
+    template: csr1000vtemplate
+    template_version: 2
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -13,7 +14,8 @@ virtual_machines:
         profile_name: 'lab_internal'
 
   - name: nalabcsr2
-    template: csr1000vtemplatebaseconfig
+    template: csr1000vtemplate
+    template_version: 2
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -74,7 +76,8 @@ virtual_machines:
         profile_name: 'lab_internal'
 
   - name: nalabsrx1
-    template: vsrx192_template2
+    template: vsrx192_template
+    template_version: 2
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -85,7 +88,8 @@ virtual_machines:
         profile_name: 'lab_internal'
 
   - name: nalabsrx2
-    template: vsrx192_template2
+    template: vsrx192_template
+    template_version: 2
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -174,7 +178,8 @@ virtual_machines:
         profile_name: 'branch_switch_int'
 
   - name: nalabc7host1
-    template: centos7-min-template2
+    template: centos7template2
+    template_version: 2
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -182,7 +187,8 @@ virtual_machines:
         profile_name: 'branch_switch_int'
 
   - name: nalabc7host2
-    template: centos7-min-template2
+    template: centos7template2
+    template_version: 2
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -190,7 +196,8 @@ virtual_machines:
         profile_name: 'cvx1_internal1'
 
   - name: nalabc7host3
-    template: centos7-min-template2
+    template: centos7template2
+    template_version: 2
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
