@@ -7,25 +7,27 @@ network_names:
   - vmx1_internal1
   - vmx2_internal1
 
+datacenter: "Default"
+
 vm_networks:
   - name: "{{ network_names[0] }}"
     vlan: 2015
-    datacenter: default
+    datacenter: "Default"
   - name: "{{ network_names[1] }}"
     vlan: 2016
-    datacenter: default
+    datacenter: "Default"
   - name: "{{ network_names[2] }}" 
     vlan: 2013
-    datacenter: default
+    datacenter: "Default"
   - name: "{{ network_names[3] }}" 
     vlan: 2014
-    datacenter: default
+    datacenter: "Default"
   - name: "{{ network_names[4] }}" 
     vlan: 2017
-    datacenter: default
+    datacenter: "Default"
   - name: "{{ network_names[5] }}" 
     vlan: 2018
-    datacenter: default
+    datacenter: "Default"
 
 ovirt_hosts:
   - name: ovirt3.mclab.com
@@ -41,7 +43,7 @@ ovirt_hosts:
 vnic_profiles:
   - name: promisc
     network: "{{ network_names[4] }}"
-    datacenter: default
+    datacenter: "Default"
   - name: promisc
     network: "{{ network_names[5] }}"
-    datacenter: default
+    datacenter: "Default"
