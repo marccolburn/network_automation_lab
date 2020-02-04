@@ -2,8 +2,8 @@
 - name: Create Full Topology
   hosts: all
   vars_files:
-    - /vars/ovirt_networks.yml
-    - /vars/ovirt_vms.yml
+    - vars/ovirt_networks.yml
+    - vars/ovirt_vms.yml
   roles:
       - role: ovirt_create_networks
       - role: ovirt_create_vnic_profiles
