@@ -1,0 +1,47 @@
+---
+network_names:
+  - cvx1_internal1
+  - cvx2_internal1
+  - branch_switch_ext
+  - branch_switch_int
+  - vmx1_internal1
+  - vmx2_internal1
+
+vm_networks:
+  - name: "{{ network_names[0] }}"
+    vlan: 2015
+    datacenter: default
+  - name: "{{ network_names[1] }}"
+    vlan: 2016
+    datacenter: default
+  - name: "{{ network_names[2] }}" 
+    vlan: 2013
+    datacenter: default
+  - name: "{{ network_names[3] }}" 
+    vlan: 2014
+    datacenter: default
+  - name: "{{ network_names[4] }}" 
+    vlan: 2017
+    datacenter: default
+  - name: "{{ network_names[5] }}" 
+    vlan: 2018
+    datacenter: default
+
+ovirt_hosts:
+  - name: ovirt3.mclab.com
+    interface: "enp11s0f0"
+    networks:
+      - name: "{{ network_names[0] }}" 
+      - name: "{{ network_names[1] }}"
+      - name: "{{ network_names[2] }}"
+      - name: "{{ network_names[3] }}"
+      - name: "{{ network_names[4] }}"
+      - name: "{{ network_names[5] }}"
+
+vnic_profiles:
+  - name: promisc
+    network: "{{ network_names[4] }}"
+    datacenter: default
+  - name: promisc
+    network: "{{ network_names[5] }}"
+    datacenter: default

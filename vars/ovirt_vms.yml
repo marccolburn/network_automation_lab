@@ -1,0 +1,198 @@
+---
+cluster: ibm3650
+virtual_machines:
+  - name: nalabcsr1
+    template: csr1000vtemplatebaseconfig
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+
+  - name: nalabcsr2
+    template: csr1000vtemplatebaseconfig
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+
+  - name: nalabeos1
+    template: eos423_template1
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+
+  - name: nalabcvx1
+    template: cumulusvx4_template1
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+      - name: nic3
+        interface: virtio
+        profile_name: 'cvx1_internal1'
+
+  - name: nalabcvx2
+    template: cumulusvx4_template1
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+      - name: nic3
+        interface: virtio
+        profile_name: 'cvx2_internal1'
+
+  - name: nalabcvx3
+    template: cumulusvx4_template1
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+
+  - name: nalabsrx1
+    template: vsrx192_template2
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+
+  - name: nalabsrx2
+    template: vsrx192_template2
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+      - name: nic3
+        interface: virtio
+        profile_name: 'branch_switch_ext'
+
+  - name: nalabvmx1vcp
+    template: vmx_vcp_template_base
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: e1000
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: e1000
+        profile_name: 'vmx1_internal1/promisc'
+
+  - name: nalabvmx1fcp
+    template: vmx_fcp_template_base
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'vmx1_internal1/promisc'
+      - name: nic3
+        interface: virtio
+        profile_name: 'lab_internal'
+
+  - name: nalabvmx2vcp
+    template: vmx_vcp_template_base
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: e1000
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: e1000
+        profile_name: 'vmx2_internal1/promisc'
+
+  - name: nalabvmx2fcp
+    template: vmx_fcp_template_base
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'vmx2_internal1/promisc'
+      - name: nic3
+        interface: virtio
+        profile_name: 'lab_internal'
+
+  - name: nalabiosxr9k1
+    template: iosxr9000vtemplate1
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal'
+
+  - name: nalabiosvl2sw1
+    template: iosvl2-template
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: e1000
+        profile_name: 'vm_outside'
+      - name: nic2
+        interface: e1000
+        profile_name: 'branch_switch_ext'
+      - name: nic3
+        interface: e1000
+        profile_name: 'branch_switch_int'
+
+  - name: nalabc7host1
+    template: centos7-min-template2
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'branch_switch_int'
+
+  - name: nalabc7host2
+    template: centos7-min-template2
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'cvx1_internal1'
+
+  - name: nalabc7host3
+    template: centos7-min-template2
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'cvx2_internal1'
