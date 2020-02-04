@@ -8,26 +8,39 @@ network_names:
   - vmx2_internal1
 
 datacenter: "Default"
+cluster: "ibm3650"
 
 vm_networks:
   - name: "{{ network_names[0] }}"
     vlan: 2015
-    datacenter: "Default"
+    datacenter: "{{ datacenter }}"
+    clusters:
+      - name: "{{ cluster }}"
   - name: "{{ network_names[1] }}"
     vlan: 2016
-    datacenter: "Default"
+    datacenter: "{{ datacenter }}"
+    clusters:
+      - name: "{{ cluster }}"
   - name: "{{ network_names[2] }}" 
     vlan: 2013
-    datacenter: "Default"
+    datacenter: "{{ datacenter }}"
+    clusters:
+      - name: "{{ cluster }}"
   - name: "{{ network_names[3] }}" 
     vlan: 2014
-    datacenter: "Default"
+    datacenter: "{{ datacenter }}"
+    clusters:
+      - name: "{{ cluster }}"
   - name: "{{ network_names[4] }}" 
     vlan: 2017
-    datacenter: "Default"
+    datacenter: "{{ datacenter }}"
+    clusters:
+      - name: "{{ cluster }}"
   - name: "{{ network_names[5] }}" 
     vlan: 2018
-    datacenter: "Default"
+    datacenter: "{{ datacenter }}"
+    clusters:
+      - name: "{{ cluster }}"
 
 ovirt_hosts:
   - name: ovirt3.mclab.com
