@@ -11,4 +11,4 @@
   roles:
     - role: ovirt_create_networks
     - role: ovirt_create_vnic_profiles
-    #- role: ovirt_create_vms
+    - role: ovirt_create_vms
