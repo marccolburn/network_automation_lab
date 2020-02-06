@@ -12,3 +12,9 @@ Caveats
 _______
 * ovirt_create_vms will not overwrite NIC profile if already assigned in template, (Recommend removing NICs from template and then assigning at creation)
 
+Diagrams
+________
+##Network Automation Lab Physical Overview
+![Physical Overview](/images/network_automation_lab_physical_overview.svg)
+##Network Automation Lab Logical with Addressing
+![Logical Overview](/images/network_automation_lab_logical_with_addressing.svg)
