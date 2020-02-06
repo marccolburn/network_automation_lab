@@ -1,8 +1,16 @@
 ---
 cluster: ibm3650
+csr_template: csr1000vtemplate
+eos_template: eos423_template1
+cvx_template: cumulusvx4_template1
+vsrx_template: vsrx192_template
+vmx_vcp_template: vmx_vcp_template_base
+vmx_fcp_template: vmx_fcp_template_base
+iosvl2_template: iosvl2-template
+centos7_template: centos7template2
 virtual_machines:
   - name: nalabcsr1
-    template: csr1000vtemplate
+    template: "{{ csr_template }}"
     template_version: 2
     cluster: "{{ cluster }}"
     nics:
@@ -14,7 +22,7 @@ virtual_machines:
         profile_name: 'lab_internal/lab_internal'
 
   - name: nalabcsr2
-    template: csr1000vtemplate
+    template: "{{ csr_template }}"
     template_version: 2
     cluster: "{{ cluster }}"
     nics:
@@ -26,7 +34,7 @@ virtual_machines:
         profile_name: 'lab_internal/lab_internal'
 
   - name: nalabeos1
-    template: eos423_template1
+    template: "{{ eos_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -37,7 +45,7 @@ virtual_machines:
         profile_name: 'lab_internal/lab_internal'
 
   - name: nalabcvx1
-    template: cumulusvx4_template1
+    template: "{{ cvx_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -51,7 +59,7 @@ virtual_machines:
         profile_name: 'cvx1_internal1/cvx1_internal1'
 
   - name: nalabcvx2
-    template: cumulusvx4_template1
+    template: "{{ cvx_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -65,7 +73,7 @@ virtual_machines:
         profile_name: 'cvx2_internal1/cvx2_internal1'
 
   - name: nalabcvx3
-    template: cumulusvx4_template1
+    template: "{{ cvx_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -76,7 +84,7 @@ virtual_machines:
         profile_name: 'lab_internal/lab_internal'
 
   - name: nalabsrx1
-    template: vsrx192_template
+    template: "{{ vsrx_template }}"
     template_version: 2
     cluster: "{{ cluster }}"
     nics:
@@ -88,7 +96,7 @@ virtual_machines:
         profile_name: 'lab_internal/lab_internal'
 
   - name: nalabsrx2
-    template: vsrx192_template
+    template: "{{ vsrx_template }}"
     template_version: 2
     cluster: "{{ cluster }}"
     nics:
@@ -103,7 +111,7 @@ virtual_machines:
         profile_name: 'branch_switch_ext/branch_switch_ext'
 
   - name: nalabvmx1vcp
-    template: vmx_vcp_template_base
+    template: "{{ vmx_vcp_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -114,7 +122,7 @@ virtual_machines:
         profile_name: 'vmx1_internal1/promisc'
 
   - name: nalabvmx1fcp
-    template: vmx_fcp_template_base
+    template: "{{ vmx_fcp_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -128,7 +136,7 @@ virtual_machines:
         profile_name: 'lab_internal/lab_internal'
 
   - name: nalabvmx2vcp
-    template: vmx_vcp_template_base
+    template: "{{ vmx_vcp_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -139,7 +147,7 @@ virtual_machines:
         profile_name: 'vmx2_internal1/promisc'
 
   - name: nalabvmx2fcp
-    template: vmx_fcp_template_base
+    template: "{{ vmx_fcp_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -164,7 +172,7 @@ virtual_machines:
         profile_name: 'lab_internal/lab_internal'
 
   - name: nalabiosvl2sw1
-    template: iosvl2-template
+    template: "{{ iosvl2_template }}"
     cluster: "{{ cluster }}"
     nics:
       - name: nic1
@@ -178,7 +186,7 @@ virtual_machines:
         profile_name: 'branch_switch_int/branch_switch_int'
 
   - name: nalabc7host1
-    template: centos7template2
+    template: "{{ centos7_template }}"
     template_version: 2
     cluster: "{{ cluster }}"
     nics:
@@ -187,7 +195,7 @@ virtual_machines:
         profile_name: 'branch_switch_int/branch_switch_int'
 
   - name: nalabc7host2
-    template: centos7template2
+    template: "{{ centos7_template }}"
     template_version: 2
     cluster: "{{ cluster }}"
     nics:
@@ -196,7 +204,7 @@ virtual_machines:
         profile_name: 'cvx1_internal1/cvx1_internal1'
 
   - name: nalabc7host3
-    template: centos7template2
+    template: "{{ centos7_template }}"
     template_version: 2
     cluster: "{{ cluster }}"
     nics:
