@@ -13,7 +13,5 @@
     - role: ovirt_create_vnic_profiles
     - role: ovirt_create_vms
       vars:
-        state: present
-    - role: ovirt_create_vms
-      vars:
         state: running
+    - role: network_interface_configuration
