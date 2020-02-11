@@ -1,0 +1,5 @@
+---
+- name: Configure interfaces for all network devices
+  hosts: all
+  roles:
+    - role: network_interface_configuration
