@@ -33,6 +33,18 @@ virtual_machines:
         interface: virtio
         profile_name: 'lab_internal/lab_internal'
 
+  - name: nalabcsr3
+    template: "{{ csr_template }}"
+    template_version: 2
+    cluster: "{{ cluster }}"
+    nics:
+      - name: nic1
+        interface: virtio
+        profile_name: 'vm_outside/vm_outside'
+      - name: nic2
+        interface: virtio
+        profile_name: 'lab_internal/lab_internal'
+
   - name: nalabeos1
     template: "{{ eos_template }}"
     cluster: "{{ cluster }}"
@@ -157,17 +169,6 @@ virtual_machines:
         interface: virtio
         profile_name: 'vmx2_internal1/promisc'
       - name: nic3
-        interface: virtio
-        profile_name: 'lab_internal/lab_internal'
-
-  - name: nalabiosxr9k1
-    template: iosxr9000vtemplate1
-    cluster: "{{ cluster }}"
-    nics:
-      - name: nic1
-        interface: virtio
-        profile_name: 'vm_outside/vm_outside'
-      - name: nic2
         interface: virtio
         profile_name: 'lab_internal/lab_internal'
 
