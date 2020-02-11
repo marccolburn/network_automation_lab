@@ -43,7 +43,7 @@ virtual_machines:
         profile_name: 'vm_outside/vm_outside'
       - name: nic2
         interface: virtio
-        profile_name: 'lab_internal/lab_internal'
+        profile_name: 'lab_internal'
 
   - name: nalabeos1
     template: "{{ eos_template }}"
